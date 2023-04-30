@@ -5,9 +5,9 @@ namespace EstacionamentoEmCsharp.Models
 {
     public class Estacionamento
     {
-        public decimal precoInicial { get; set; }
-        public decimal precoHora { get; set; }
-        private List<string> veiculos = new List<string>();
+       public decimal precoInicial = 0;
+       public decimal precoHora = 0;
+        public List<string> veiculos = new List<string>();
 
         public Estacionamento(decimal precoInicial, decimal precoHora)
         {
@@ -25,10 +25,9 @@ namespace EstacionamentoEmCsharp.Models
             Console.Clear();
             switch (opcao)
             {
-                case "moto": Veiculo.Moto.AdicionaMoto(); break;
-                case "carro": Veiculo.Carro.AdicionaCarro(); break;
+                case "moto": Veiculo.Moto.AdicionaMoto(placa); break;
+                case "carro": Veiculo.Carro.AdicionaCarro(placa); break;
             }
-
         }
         public void removerVeiculo()
         {

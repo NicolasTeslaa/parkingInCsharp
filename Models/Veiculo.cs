@@ -12,9 +12,12 @@ namespace EstacionamentoEmCsharp.Models
             public string Marca { get; set; }
             public string Placa { get; set; }
 
-            public static void AdicionaMoto()
+            public static void AdicionaMoto(string placa)
             {
-                
+                if(veiculos.Any(x => x.ToUpper() == placa.ToUpper()))
+                {
+                    
+                }
             }
         }
         public class Carro
@@ -24,7 +27,7 @@ namespace EstacionamentoEmCsharp.Models
             public string Marca { get; set; }
             public string Placa { get; set; }
 
-            public static void AdicionaCarro()
+            public static void AdicionaCarro(string placa)
             {
 
             }
