@@ -14,7 +14,7 @@ namespace EstacionamentoEmCsharp.Models
 
             public static void AdicionaMoto()
             {
-
+                
             }
         }
         public class Carro
