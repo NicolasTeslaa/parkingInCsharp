@@ -1,9 +1,11 @@
 using System;
+using System.Collections.Generic;
 
 namespace EstacionamentoEmCsharp.Models
 {
     public class Veiculo
     {
+        public List<string> veiculos = new List<string>();
 
         public class Moto
         {
@@ -14,9 +16,10 @@ namespace EstacionamentoEmCsharp.Models
 
             public static void AdicionaMoto(string placa)
             {
+                
                 if(veiculos.Any(x => x.ToUpper() == placa.ToUpper()))
                 {
-                    
+
                 }
             }
         }

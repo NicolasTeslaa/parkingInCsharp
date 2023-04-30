@@ -7,7 +7,6 @@ namespace EstacionamentoEmCsharp.Models
     {
        public decimal precoInicial = 0;
        public decimal precoHora = 0;
-        public List<string> veiculos = new List<string>();
 
         public Estacionamento(decimal precoInicial, decimal precoHora)
         {
