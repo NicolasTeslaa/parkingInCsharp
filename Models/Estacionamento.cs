@@ -20,6 +20,14 @@ namespace EstacionamentoEmCsharp.Models
             Console.WriteLine("Digite a placa do veiculo");
             var placa = (Console.ReadLine());
             Console.Clear();
+            Console.WriteLine("Seu veiculo é uma moto ou um carro?");
+            var opcao = (Console.ReadLine());
+            Console.Clear();
+            switch (opcao)
+            {
+                case "moto": Veiculo.Moto.AdicionaMoto(); break;
+                case "carro": Veiculo.Carro.AdicionaCarro(); break;
+            }
 
         }
         public void removerVeiculo()
