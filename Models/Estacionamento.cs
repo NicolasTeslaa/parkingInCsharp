@@ -5,8 +5,9 @@ namespace EstacionamentoEmCsharp.Models
 {
     public class Estacionamento
     {
-       public decimal precoInicial = 0;
-       public decimal precoHora = 0;
+        public decimal precoInicial = 0;
+        public decimal precoHora = 0;
+        public List<string> veiculos = new List<string>();
 
         public Estacionamento(decimal precoInicial, decimal precoHora)
         {
@@ -19,14 +20,13 @@ namespace EstacionamentoEmCsharp.Models
             Console.WriteLine("Digite a placa do veiculo");
             var placa = (Console.ReadLine());
             Console.Clear();
-            Console.WriteLine("Seu veiculo é uma moto ou um carro?");
-            var opcao = (Console.ReadLine());
-            Console.Clear();
-            switch (opcao)
+            if (veiculos.Any(x => x.ToUpper() == placa.ToUpper()))
             {
-                case "moto": Veiculo.Moto.AdicionaMoto(placa); break;
-                case "carro": Veiculo.Carro.AdicionaCarro(placa); break;
+                Console.WriteLine("Veiculo já existe");
+                Thread.Sleep(2000);
+                Console.Clear();
             }
+
         }
         public void removerVeiculo()
         {
