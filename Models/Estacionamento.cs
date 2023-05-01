@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using parkingInCsharp;
 
 namespace EstacionamentoEmCsharp.Models
 {
@@ -28,13 +29,19 @@ namespace EstacionamentoEmCsharp.Models
                 Console.WriteLine("Veiculo já existe");
                 Thread.Sleep(2000);
                 Console.Clear();
+                Menu.ChamaMenu();
             }
             else
             {
                 veiculos.Add(placa.Trim());
                 Console.WriteLine("Veículo cadastrado com sucesso!\n");
+                Thread.Sleep(2000);
+                Console.Clear();
+                Menu.ChamaMenu();
             }
-
+            Thread.Sleep(2000);
+            Console.Clear();
+            Menu.ChamaMenu();
         }
         public void removerVeiculo()
         {
@@ -61,13 +68,39 @@ namespace EstacionamentoEmCsharp.Models
                 Console.Clear();
                 Thread.Sleep(1000);
                 Console.WriteLine($"O Veiculo {placa} foi removido e ficou no valor : {valorTotal}");
-                Thread.Sleep(3000);
+                Thread.Sleep(2000);
                 Console.Clear();
+                Menu.ChamaMenu();
+            } else{
+                Console.WriteLine("Veiculo nao encontrado");
             }
         }
         public void listarVeiculo()
         {
-
+            if (veiculos.Any())
+            {
+                Console.Clear();
+                Console.WriteLine("V E I C U L O S    E S T A C I O N A D O S");
+                Thread.Sleep(3000);
+                Console.Clear();
+                int contador = 0;
+                foreach (string placa in veiculos)
+                {
+                    Console.WriteLine(placa);
+                    contador++;
+                    Console.Clear();
+                }
+                Thread.Sleep(2000);
+                Console.Clear();
+                Menu.ChamaMenu();
+            }
+            else
+            {
+                Console.WriteLine("Não há veiculos estacionados no momento");
+                Thread.Sleep(2000);
+                Console.Clear();
+                Menu.ChamaMenu();
+            }
         }
     }
 }
